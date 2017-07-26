@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from .forms import SubscribersForm
+from .forms import SubscriberForm
 
 
 def landing(request):
     name = 'Dima'
-    form = SubscribersForm(request.POST or None)
+    form = SubscriberForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         data = form.cleaned_data
         print(data['name'])
