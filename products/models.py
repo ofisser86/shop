@@ -4,12 +4,13 @@ from django.db import models
 
 class Product(models.Model):
     name = models.CharField(max_length=64, blank=True, null=True, default=None)
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=0)  # price for product
     description = models.TextField(blank=True, null=True, default=None)
-    created = models.DateTimeField(auto_now_add=True,auto_now=False)
-    updated = models.DateTimeField(auto_now_add=False,auto_now=True)
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __unicode__(self):
-        return "%s " % self.name
+        return "%d, %s " % (self.price, self.name)
 
     class Meta(object):
         verbose_name = 'Товар'
