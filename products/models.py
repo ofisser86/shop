@@ -11,7 +11,7 @@ class Product(models.Model):
     def __unicode__(self):
         return "%s " % self.name
 
-    class Meta:
+    class Meta(object):
         verbose_name = 'Товар'
         verbose_name_plural = 'Товары'
 
