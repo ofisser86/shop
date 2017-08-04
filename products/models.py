@@ -10,7 +10,7 @@ class Product(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
 
     def __unicode__(self):
-        return "%d, %s " % (self.price, self.name)
+        return "%s, %s " % (self.price, self.name)
 
     class Meta(object):
         verbose_name = 'Товар'
