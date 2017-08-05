@@ -28,3 +28,11 @@ html, body {
     left: 0;
     right: 0;
 }
+.nvb{
+    margin-bottom: 0;
+}
+.footer{
+    margin-bottom: -100px;
+    background-color: white;
+    height: 200px;
+}
