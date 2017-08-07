@@ -31,10 +31,20 @@ html, body {
 .nvb{
     margin-bottom: 0;
 }
+.wrapper{
+    min-height: 100%;
+}
+.wrapper-content{
+    overflow: auto;
+    padding-bottom: 180px;
+}
+
 .footer{
-    margin-bottom: -100px;
-    background-color: white;
-    height: 200px;
+    position: relative;
+    margin-top: -180px;
+    height: 180px;
+    clear: both;
+    background-color: darkgray;
 }
 .discount-container{
     position: absolute;
@@ -44,4 +54,14 @@ html, body {
     color: white;
     font-weight: 700;
     padding: 3px;
+}
+.section-delivery{
+    height: 300px;
+    background-color: #3c763d;
+    text-align: center;
+    color: white;
+    padding-top: 30px;
+}
+.product-description-tabs{
+    padding: 10px;
 }
