@@ -30,6 +30,14 @@ html, body {
 }
 .nvb{
     margin-bottom: 0;
+    border: none;
+    background-color: #4ec67f;
+    border-radius: 0px;
+}
+
+.nav-change>li.active, .nav-change>li>a:hover, .nav-change>li>a:focus, .nav-change>li:hover>a{
+        background-color: #27ae60;
+
 }
 .wrapper{
     min-height: 100%;
@@ -64,4 +72,14 @@ html, body {
 }
 .product-description-tabs{
     padding: 10px;
+}
+.navbar-top{
+    min-height: 10px;
+    height: 20px;
+    background-color: #4bb777;
+    border-radius: 0;
+}
+ul#add-to-cart{
+  width: 400px;
+
 }
