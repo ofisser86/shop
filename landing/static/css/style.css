@@ -80,6 +80,9 @@ html, body {
     border-radius: 0;
 }
 ul#add-to-cart{
-  width: 400px;
+  width: 450px;
+}
 
+#add-to-cart>li>a {
+    display: inline-block;
 }

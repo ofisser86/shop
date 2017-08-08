@@ -13,8 +13,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
-from landing import views
+from orders import views
 
 urlpatterns = [
-   # url(r'^landing/', views.landing, name='landing'),
+   url(r'^basket_adding/$', views.basket_adding, name='basket_adding'),
 ]

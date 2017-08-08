@@ -12,9 +12,37 @@ $(document).ready(function() {
         console.log( product_id);
          console.log( product_name);
 
-      $('#add-to-cart').append('<li>' + product_name + ' ' + nmb + 'шт' + product_price + 'UAH' +
-          '<a class="delete-item" href="">x</a>' +'</li>');
-    })
+         var data = {};
+
+        data['product_name'] = product_name;
+        data['nmb'] = nmb;
+        data['product_price'] = product_price;
+
+        var csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val();
+        data['csrfmiddlewaretoken'] = csrf_token;
+
+        var url = form.attr('action');
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            cache: true,
+            success: function (data) {
+                console.log('OK');
+                console.log(data.products_total_nmb);
+                if (data.products_total_nmb){
+                   $('#basket_total_nmb').text('('+ data.products_total_nmb + ')');
+                }
+            },
+            error: function (data) {
+                console.log('error')
+            }
+        });
+
+
+      $('#add-to-cart').append('<li>' + '<a href="">'+ product_name + ' ' + nmb + ' ' + 'шт ' +
+          product_price + ' UAH' + '</a>' + '<a class="delete-item" href="">x</a>' + '</li>');
+    });
 
     $(document).on('click', 'delete-item', function (e) {
         e.preventDefault();
