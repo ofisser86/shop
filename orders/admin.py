@@ -17,7 +17,6 @@ class OrderAdmin(admin.ModelAdmin):
         verbose_name = 'My Order'
         verbose_name_plural = 'My orders'
 
-
 admin.site.register(Order, OrderAdmin)
 
 
@@ -26,7 +25,6 @@ class StatusAdmin(admin.ModelAdmin):
 
     class Meta:
         model = Status
-
 
 admin.site.register(Status, StatusAdmin)
 
