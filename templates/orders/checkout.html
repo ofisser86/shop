@@ -9,11 +9,12 @@
                 <h3 class="text-center">Товары в корзине</h3>
                 <h4 class="text-center">Общая стоимсть: {{ request.session.basket.total_amount }} грн </h4>
                 {{ request.session.basket.products }}
-                <ul>
-                    {% for product_in_basket in products_in_basket %}
-                    <li>{{ product_in_basket.product.name }}</li>
-                    {% endfor %}
-                </ul>
+                <form></form>
+                {% for product_in_basket in products_in_basket %}
+                    {{ product_in_basket.product.name }}
+                    <input value="{{ product_in_basket.nmb }}">
+                {% endfor %}
+                </form>
+            </div>
         </div>
-    </div>
 {% endblock %}
