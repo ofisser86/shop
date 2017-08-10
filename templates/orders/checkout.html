@@ -9,12 +9,50 @@
                 <h3 class="text-center">Товары в корзине</h3>
                 <h4 class="text-center">Общая стоимсть: {{ request.session.basket.total_amount }} грн </h4>
                 {{ request.session.basket.products }}
-                <form></form>
-                {% for product_in_basket in products_in_basket %}
-                    {{ product_in_basket.product.name }}
-                    <input value="{{ product_in_basket.nmb }}">
-                {% endfor %}
+                <form>
+                    <table class="table text-center">
+                        <thead>
+                        <tr>
+                            <th>Название товара</th>
+                            <th>Количество</th>
+                            <th>Цена за единицу</th>
+                            <th>Общая цена</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        {% for product_in_basket in products_in_basket %}
+                            <tr>
+
+                                <td>
+                                    {{ product_in_basket.product.name }}
+                                </td>
+
+                                <td>
+                                    <input value="{{ product_in_basket.nmb }}" type="number">
+                                </td>
+
+                                <td>
+                                    {{ product_in_basket.price_per_item }}
+                                </td>
+
+                                <td>
+                                    {{ product_in_basket.total_price }}
+                                </td>
+
+
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                                <div class="text-right">
+                        <button type="submit" class="btn btn-primary btn-lg">Заказать</button>
+
+                    </div>
+
                 </form>
+
             </div>
         </div>
-{% endblock %}
+    </div>
+{% endblock content %}
