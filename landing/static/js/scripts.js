@@ -1,6 +1,6 @@
 $(document).ready(function(){
     var form = $('#form_buying_product');
-    console.log(form);
+   
 
 
     function basketUpdating(product_id, nmb, is_delete){
@@ -23,11 +23,10 @@ $(document).ready(function(){
              data: data,
              cache: true,
              success: function (data) {
-                 console.log("OK");
-                 console.log(data.products_total_nmb);
+
                  if (data.products_total_nmb || data.products_total_nmb == 0){
                     $('#basket_total_nmb').text("("+data.products_total_nmb+")");
-                     console.log(data.products);
+
                      $('.basket-items ul').html("");
                      $.each(data.products, function(k, v){
                         $('.basket-items ul').append('<li>'+ v.name+', ' + v.nmb + 'шт. ' + 'по ' + v.price_per_item + 'грн  ' +
@@ -38,7 +37,7 @@ $(document).ready(function(){
 
              },
              error: function(){
-                 console.log("error")
+
              }
          })
 
@@ -46,15 +45,13 @@ $(document).ready(function(){
 
     form.on('submit', function(e){
         e.preventDefault();
-        console.log('123');
+
         var nmb = $('#number').val();
-        console.log(nmb);
+
         var submit_btn = $('#submit_btn');
         var product_id =  submit_btn.data("product_id");
         var name = submit_btn.data("name");
         var price = submit_btn.data("price");
-        console.log(product_id );
-        console.log(name);
 
         basketUpdating(product_id, nmb, is_delete=false)
 
@@ -89,13 +86,13 @@ $(document).ready(function(){
         $('.total-product-in-basket-amount').each(function() {
             total_order_amount = total_order_amount + parseFloat($(this).text());
         });
-        console.log(total_order_amount);
+
         $('#total_order_amount').text(total_order_amount.toFixed(2));
     };
 
     $(document).on('change', ".product-in-basket-nmb", function(){
         var current_nmb = $(this).val();
-        console.log(current_nmb);
+
 
         var current_tr = $(this).closest('tr');
         var current_price = parseFloat(current_tr.find('.product-price').text()).toFixed(2);
