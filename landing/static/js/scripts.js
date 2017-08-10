@@ -104,7 +104,7 @@ $(document).ready(function(){
         console.log(total_amount);
         current_tr.find('.total-product-in-basket-amount').text(total_amount);
 
-        // calculatingBasketAmount();
+         calculatingBasketAmount();
     });
 
     // function total_product_in_basket_amount() {

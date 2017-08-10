@@ -29,11 +29,15 @@
                                 </td>
 
                                 <td>
-                                    <input value="{{ product_in_basket.nmb }}" type="number">
+                                    <input value="{{ product_in_basket.nmb }}" type="number"
+                                           class="product-in-basket-nmb">
                                 </td>
 
                                 <td>
-                                    {{ product_in_basket.price_per_item }}
+                                    <span class="product-price">
+                                        {{ product_in_basket.price_per_item }}
+                                    </span>
+
                                 </td>
 
                                 <td>
