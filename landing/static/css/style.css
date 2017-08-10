@@ -117,3 +117,12 @@ html, body{
 .form-error{
     color: red;
 }
+.hr{
+    background-color: black;
+    color: black;
+    border: none;
+    height: 2px;
+}
+.sum-order{
+    margin: 20px;
+}

@@ -37,7 +37,10 @@
                                 </td>
 
                                 <td>
-                                    {{ product_in_basket.total_price }}
+                                    <span class="total-product-in-basket-amount">
+                                        {{ product_in_basket.total_price }}
+                                    </span>
+
                                 </td>
 
 
@@ -45,6 +48,11 @@
                         {% endfor %}
                         </tbody>
                     </table>
+                <hr class="hr">
+                <div class="text-right sum-order">
+                    <strong>Сумма заказа</strong> <span id="total_order_amount">5</span>
+
+                </div>
                                 <div class="text-right">
                         <button type="submit" class="btn btn-primary btn-lg">Заказать</button>
 

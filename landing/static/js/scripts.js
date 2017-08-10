@@ -104,10 +104,18 @@ $(document).ready(function(){
         console.log(total_amount);
         current_tr.find('.total-product-in-basket-amount').text(total_amount);
 
-        calculatingBasketAmount();
+        // calculatingBasketAmount();
     });
 
+    // function total_product_in_basket_amount() {
+    //     var total_order_amount = 0;
+    //     $('#total_product_in_basket_amount').each(function () {
+    //                 total_order_amount += $(this).text;
+    //     });
+    //     console.log(total_order_amount);
+    // }
 
     calculatingBasketAmount();
+
 
 });
