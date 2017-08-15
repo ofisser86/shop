@@ -5,11 +5,31 @@
 {% block content %}
     <div class="container">
         <div class="row">
+{#                {% if product_in_basket %}#}
             <div class="col-lg-12">
                 <h3 class="text-center">Товары в корзине</h3>
                 <h4 class="text-center">Общая стоимсть: {{ request.session.basket.total_amount }} грн </h4>
                 {{ request.session.basket.products }}
-                <form>
+
+                <form class="form-inline" method="post">{% csrf_token %}
+
+                    <div class="form-group">
+                        <label>Имя
+                            <span class="form-error">{{ form.name.errors }}</span>
+                            <input type="text" name="{{ form.name.html_name }}" class="form-control" value="{{ request.POST.name }}">
+                        </label>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Телефон
+                            <span class="form-error">{{ form.phone.errors }}</span>
+                            <input type="text" name="{{ form.phone.html_name }}" class="form-control" value="{{ request.POST.phone }}">
+                        </label>
+                    </div>
+
+
+
                     <table class="table text-center">
                         <thead>
                         <tr>
@@ -30,7 +50,8 @@
 
                                 <td>
                                     <input value="{{ product_in_basket.nmb }}" type="number"
-                                           class="product-in-basket-nmb">
+                                           class="product-in-basket-nmb"
+                                           name="product_in_basket_{{ product_in_basket.id }}">
                                 </td>
 
                                 <td>
@@ -52,12 +73,12 @@
                         {% endfor %}
                         </tbody>
                     </table>
-                <hr class="hr">
-                <div class="text-right sum-order">
-                    <strong>Сумма заказа</strong> <span id="total_order_amount">5</span>
+                    <hr class="hr">
+                    <div class="text-right sum-order">
+                        <strong>Сумма заказа</strong> <span id="total_order_amount">5</span>
 
-                </div>
-                                <div class="text-right">
+                    </div>
+                    <div class="text-right">
                         <button type="submit" class="btn btn-primary btn-lg">Заказать</button>
 
                     </div>
@@ -65,6 +86,9 @@
                 </form>
 
             </div>
+{#                    {% else %}#}
+{#                    <h3 class="text-center"> В вашей корзине нет товаров</h3>#}
+{#        {% endif %}#}
         </div>
     </div>
 {% endblock content %}
